@@ -40,12 +40,12 @@ the hello world script now by typing the following:
 
 '''
 
-from smpl_webuser.serialization import load_model
+from serialization import load_model
 import numpy as np
 
 ## Load SMPL model (here we load the female model)
 ## Make sure path is correct
-m = load_model( '../../models/basicModel_f_lbs_10_207_0_v1.0.0.pkl' )
+m = load_model( 'E:/pyproject/MCCV/neural_body_fitting-master/external/smpl/models/basicModel_f_lbs_10_207_0_v1.0.0.pkl' )
 
 ## Assign random pose and shape parameters
 m.pose[:] = np.random.rand(m.pose.size) * .2
@@ -61,4 +61,4 @@ with open( outmesh_path, 'w') as fp:
         fp.write( 'f %d %d %d\n' %  (f[0], f[1], f[2]) )
 
 ## Print message
-print '..Output mesh saved to: ', outmesh_path 
+print ('..Output mesh saved to: ', outmesh_path)
